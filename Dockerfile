@@ -37,8 +37,6 @@ RUN chmod +x run_once.sh
 COPY dropbox-monitor.sh /dropbox-monitor.sh
 RUN chmod +x dropbox-monitor.sh
 
-# expose for lansync: to enable must run with --net='host'
-EXPOSE 17500
 # expose supervisor http server
 EXPOSE 8000
 
