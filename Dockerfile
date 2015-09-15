@@ -3,16 +3,7 @@ MAINTAINER antoniorossi <antoniorossi@outlook.com>
 
 # antoniorossi/dropbox-supervisor
 
-# env to override for daemon user if needed
-ENV USER_ID 1001
-ENV GROUP_ID 1001
-ENV USER_PASSWORD password
 ENV HOME /dbox
-
-# Create service account and set permissions.
-RUN groupadd --gid $GROUP_ID dropbox
-RUN useradd -m -d $HOME -c "Dropbox Daemon Account" -g dropbox --uid $USER_ID dropbox
-RUN chpasswd dropbox:$PASSWORD # need a password for user
 
 # Download & install required applications
 RUN apt-get update && apt-get install -y \
